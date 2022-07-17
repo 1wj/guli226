@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap/3.3.7/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bs/bootstrap.css">
+    <link  rel="stylesheet" type="text/css" href="css/menu.css"/>
+    <script src="js/bootstrap/bs/bootstap.js"></script>
+   <script type="text/javascript" src=./jquery-1.11.3.min.js></script>
+    
+   
+    <script>
+        $(document).ready(function () {
+            $(".pan a").click(function () {
+                $(".pan a").each(function () {
+                    $(this).removeClass("active");
+                })
+                $("#" + $(this).attr("id")).addClass("active")
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+    <div class="pan">
+        <p style="padding-top: 10px; width:180px;font-size: 20px; ">经费管理系统</p>
+        <a id="1" href="szqk.html" target="show" class="active" style="width:150px; ">收支情况</a>
+        <a id="2" href="szls.html" target="show" style="width:150px; ">收支历史</a>
+        <a id="3" href="szbd.html" target="show" style="width:100px; ">收支对比</a>
+        <p style="margin-left: 670px;"><a href="/用户管理.html" target="show" type="button"
+                style="margin-top: -16px; background: #252D47; border: none; color: #fff;">用户管理&nbsp; |</a>
+        </p>
+        <div class="dropdown" style="float: left; margin-left: -30px; margin-right: 50px ;">
+            <p><i class="glyphicon glyphicon-user"></i> &nbsp;test</p>
+            <div class="dropdown-content">
+                <a href="#">退出/注销</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  rel="stylesheet" type="text/css" href="css/szqk.css"/>
+    <link rel="stylesheet" href="css/bootstrap/3.3.7/bootstrap.min.css">
+    <link rel="stylesheet" href="css/4.7.0/font-awesome.css">
+    
+    <script type="text/javascript" src=./jquery-1.11.3.min.js></script>
+    <script src="js/bootstrap/3.3.7/bootstrap.min.js"></script>
+    <script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+    
+     
+    
+
+    
+    <script type="text/javascript" defer>
+        $(document).ready(function () {
+            $("body").delegate('.edit','click',function () {
+                //获得当前行
+                var currentRow = $(this).closest("tr");
+                var user = currentRow.find("td:eq(0)").text(); 
+                var event = currentRow.find("td:eq(1)").text(); 
+                var time = currentRow.find("td:eq(2)").text(); 
+                var money = currentRow.find("td:eq(3)").text(); 
+                var type = currentRow.find("td:eq(4)").text(); 
+                var paytime = currentRow.find("td:eq(7)").text(); 
+                var data = user + "\n" + event + "\n" + time + "\n" + money + "\n" + type + "\n" +
+                    paytime;
+
+
+                // currentRow.find("td:eq(0)").html('<input type="text" name="" id="" value="'+user+'">')
+                //修改单元格
+                currentRow.find("td:eq(0)").html(
+                    '<select class="form-select" style="width:100px;" ><option>团队</option><option>团队2</option><option>团队3</option><option>团队4</option></select>'
+                )
+                currentRow.find("td:eq(1)").html('<input style="width:80px" type="text" value="' +
+                    event + '">')
+                currentRow.find("td:eq(2)").html('<input style="width:100px" type="text" value="' +
+                    time + '">')
+                currentRow.find("td:eq(3)").html('<input style="width:50px" type="text" value="' +
+                    money + '">')
+                currentRow.find("td:eq(4)").html(
+                    '<select class="form-select" style="width:100px;"><option>支出</option><option>收入</option></select>'
+                )
+                currentRow.find("td:eq(7)").html('<input style="width:100px" type="text" value="' +
+                    paytime + '">')
+                currentRow.find("td:eq(8)").html(
+                    '<button type="button" style="height:32px" class="btn btn-primary">确定</button> <button id="cancel" type="button" class="btn btn-default" data-dismiss="modal">取消</button> '
+                )
+
+
+                $("#cancel").click(function () {
+                    currentRow.find("td:eq(0)").text(user); 
+                    currentRow.find("td:eq(1)").text(event); 
+                    currentRow.find("td:eq(2)").text(time); 
+                    currentRow.find("td:eq(3)").text(money); 
+                    currentRow.find("td:eq(4)").text(type); 
+                    currentRow.find("td:eq(7)").text(paytime);
+                    currentRow.find("td:eq(8)").html(
+                        '<a href="#" class="edit">编辑</a> <a href="#">删除</a>')
+                })
+            })
+
+
+
+        })
+    </script>
+
+</head>
+
+<body>
+<div id=div1></div>
+<div id=div2>
+    <div class="main-input">
+
+        <input type="text"  style="height: 38px;width: 386px;" placeholder="请输入报销人,报销时间" class="bk"/>
+        <input type="text" placeholder="起始时间"  style="height: 38px;width: 180px;" onclick="WdatePicker()" class="bk"/> -
+        <input type="text" placeholder="结束时间"  style="height: 38px;width: 180px;" onclick="WdatePicker()" class="bk"/>
+        <button class="addData">查询</button>
+        <button class="addData" type="button" data-toggle="modal" data-target="#mymodal" style=" position: absolute; right: 80px;">添加数据</button>
+        <!-- 模态弹出窗 -->
+        <div class="modal fade" id="mymodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">添加新数据</h4>
+                    </div>
+                    <div class="modal-body" style="height: 400px;">
+
+                        <table class="add">
+                            <tr>
+                                <td style="width: 200px;"><label for="">报销人:</label></td>
+                                <td>
+                                    <select class="form-select" style="width: 282px;height: 32px; border-radius: 3px;
+                                    border: #216df5 solid 1px; " >
+                                        <option>团队</option>
+                                        <option>团队2</option>
+                                        <option>团队3</option>
+                                        <option>团队4</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 200px;"><label for="">报销事由:</label></td>
+                                <td>
+                                    <input type="text" placeholder="请输入事由" class="bk">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 200px;"><label for="">收入/支出时间:</label></td>
+                                <td>
+                                   
+                                    <input type="text" placeholder="收入支出时间"   onclick="WdatePicker()" class="bk"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 200px;"><label for="">收支金额:</label></td>
+                                <td>
+                                    <input type="text" placeholder="请输入收支金额" class="bk">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 200px;"><label for="">报销类型:</label></td>
+                                <td>
+                                    <select class="form-select"
+                                        style="width: 282px;float: right; margin-right: 20px; height: 32px;  border-radius: 3px;
+                                        border: #216df5 solid 1px;" >
+                                        <option>支 出</option>
+                                        <option>收 入</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 200px;">
+                                    <label for="">报销日期:</label>
+                                   
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="报销日期"   onclick="WdatePicker()" class="bk"/>
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+                    <div class="modal-footer" style="text-align: center;">
+                        <button type="button" class="btn btn-default " data-dismiss="modal" style=" background-color: #2986f7;
+                        border-radius: 3px; border: gray solid 1px; width: 78px; height: 30px;color: #f0f2f5;">取消</button>
+                        <button type="button" class="btn btn-primary " style=" background-color: #2986f7;
+                        border-radius: 3px;border: gray solid 1px; width: 78px;height: 30px; color: #f0f2f5;">确定</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+
+    </div>
+    <div class="tab">
+        <table class="mtb" >
+            <tr >
+                <th style="width: 120px; text-align: center;">报销人</th>
+                <th style="text-align: center;">事由</th>
+                <th style="text-align: center;">收入/支出时间</th>
+                <th style="text-align: center;">收支金额</th>
+                <th style="text-align: center;">类型</th>
+                <th style="text-align: center;">剩余金额</th>
+                <th style="text-align: center;">记录人</th>
+                <th style="text-align: center;">报销时间</th>
+                <th style="text-align: center;">操作</th>
+            </tr>
+            <tr>
+                <td>团队2</td>
+                <td>测试</td>
+                <td>2018-05-08</td>
+                <td>100</td>
+                <td>支出</td>
+                <td>7113.89</td>
+                <td>张三</td>
+                <td>2018-05-08</td>
+                <td>
+                    <a href="#" class="edit">编辑</a>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-05-08</td>
+                <td>100</td>
+                <td>支出</td>
+                <td>7113.89</td>
+                <td>张三</td>
+                <td>2018-05-08</td>
+                <td>
+                    <a href="#">编辑</a>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-05-08</td>
+                <td>100</td>
+                <td>支出</td>
+                <td>7113.89</td>
+                <td>张三</td>
+                <td>2018-05-08</td>
+                <td>
+                    <a href="#">编辑</a>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-05-08</td>
+                <td>100</td>
+                <td>支出</td>
+                <td>7113.89</td>
+                <td>张三</td>
+                <td>2018-05-08</td>
+                <td>
+                    <a href="#">编辑</a>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-05-08</td>
+                <td>100</td>
+                <td>支出</td>
+                <td>7113.89</td>
+                <td>张三</td>
+                <td>2018-05-08</td>
+                <td>
+                    <a href="#">编辑</a>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-05-08</td>
+                <td>100</td>
+                <td>支出</td>
+                <td>7113.89</td>
+                <td>张三</td>
+                <td>2018-05-08</td>
+                <td>
+                    <a href="#">编辑</a>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-05-08</td>
+                <td>100</td>
+                <td>支出</td>
+                <td>7113.89</td>
+                <td>张三</td>
+                <td>2018-05-08</td>
+                <td>
+                    <a href="#">编辑</a>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-05-08</td>
+                <td>100</td>
+                <td>支出</td>
+                <td>7113.89</td>
+                <td>张三</td>
+                <td>2018-05-08</td>
+                <td>
+                    <a href="#">编辑</a>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+        </table>
+
+        <span class="tbt">共 83 条记录，当前显示第 76 - 83 条
+            <select class="form-select">
+                <option>15 页/条</option>
+                <option>10 页/条</option>
+                <option>8 页/条</option>
+                <option>5 页/条</option>
+            </select>
+        </span>
+
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li class="active"><a href="#">6</a></li>
+            <li class="disabled"><a href="#"> 6/6页</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
+    <HR style="width: 95%; color: #000;">
+    </HR>
+</div>
+<div id=div3></div>
+
+</body>
+
+</html>

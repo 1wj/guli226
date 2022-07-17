@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 创建一个容器 -->
+    <div id="app">
+            {{age}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        //创建一个vue实例，  {}叫做配置对象
+        new Vue({
+            el: '#app',//用于指定当前vue实例为那个容器服务
+
+            //data有两种写法 
+            //1.对象式：data:{}，
+            // 2.函数式 data(){return{}}  这里面的this表示vue实例   组件必须用函数式否则会报错
+
+            //data中所有的数据，最终都会出现在VM身上  vm._data.name==vm.name  vm._data.address=vm.address
+            
+            
+            data: {
+                age:"123"
+            }
+        })
+    </script>
+</body>
+
+</html>

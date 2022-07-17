@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" type="text/css" href="css/addData.css"/>
+    <script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <form action="">
+            <table align="center" border="0" id="tab" >
+        
+                <tr>
+                    <td align="center" colspan="2" style="color:#2d2f33; font-size: 30px;"  >添加新数据</td>
+                    
+                </tr>
+                <tr>
+                    <td class="co" >报销人：</td>
+                    <td >
+                        <select name="" id="">
+                            <option>团队</option>
+                            <option>个人</option>
+                        </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="co">报销事由:</td>
+                    <td >
+                        <input type="text" class="ys" placeholder="请输入事由:" />       
+                    </td>
+                </tr>
+                <tr>
+                    <td class="co">收入/支出时间:</td>
+                    <td >
+                        <input type="text" placeholder="请输入收支/支出时间:"  class="ys" onclick="WdatePicker()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td  class="co">收支金额:</td>
+                    <td >
+                        <input type="text" placeholder="请输入收支金额:" class="ys" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="co">报销类型:</td>
+                    <td >
+                        <select name="" id="">
+                            <option>支出</option>
+                            <option>支入</option>
+                        </select>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td  class="co">报销日期:</td>
+                    <td >
+                        <input type="text" placeholder="请输入时间:" class="ys" onclick="WdatePicker()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <input type="submit" value="确定" class="btn"/>
+                        <input type="button" value="取消"  class="btn"/>
+                    </td>
+              
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+   
+</body>
+</html>

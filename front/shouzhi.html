@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/shouzhi.css" />
+    <script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+    
+</head>
+<body>
+   
+    <div id="div1"></div>
+
+    <div id="div2">
+        <table  id="tab"  >
+            <tr style="height: 80PX;" >
+                <form>
+                    <td colspan="9" align="left" >
+                        <input type="text"  style="height: 38px;width: 386px;" placeholder="请输入报销人,报销时间" class="bk"/>
+                        <input type="text" placeholder="起始时间"  style="height: 38px;width: 180px;" onclick="WdatePicker()" class="bk"/>--
+                        <input type="text" placeholder="结束时间"  style="height: 38px;width: 180px;" onclick="WdatePicker()" class="bk"/>                
+                        <input type="button" value="查询" style="width: 80px;" class="addData" />
+                        <input type="button" value="添加数据" class="addData">
+                    </td>
+                   
+                        
+                    
+                </form>
+                
+            </tr>
+            <tr class="dh" id="bth">
+                <th>报销人
+                     
+                </th>
+                <th>事由</th>
+                <th>收入/支出时间</th>
+                <th>收支金额</th>
+                <th>类型</th>
+                <th>剩余金额</th>
+                <th>记录人</th>
+                <th>报销时间
+                   
+                </th>
+                <th>操作</th>
+            </tr>
+            <tr  class="sh">
+                <td>
+                    团队
+                </td>
+                <td>测试</td>
+                <td>2018-05-08</td>
+                <td>100</td>
+                <td>支出</td>
+                <td>7113.39</td>
+                <td>张三</td>
+                <td>2018-05-08</td>
+                <td>
+                    <a href="category_toAdd.html">编辑</a>
+                    <a href="">删除</a>      
+                </td>
+            </tr>
+            <tr class="dh">
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-03-18</td>
+                <td>49</td>
+                <td>支出</td>
+                <td>7213.39</td>
+                <td>张三</td>
+                <td>2018-03-18</td>
+                <td>
+                    <a href="category_toAdd.html">编辑</a>
+                    <a href="">删除</a>      
+                </td>
+            </tr>
+            <tr class="sh">
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-03-16</td>
+                <td>71.2</td>
+                <td>支出</td>
+                <td>7262.39</td>
+                <td>张三</td>
+                <td>2018-03-16</td>
+                <td>
+                    <a href="category_toAdd.html">编辑</a>
+                    <a href="">删除</a>      
+                </td>
+            </tr>
+            <tr  class="dh">
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-03-08</td>
+                <td>29.9</td>
+                <td>支出</td>
+                <td>7387.39</td>
+                <td>张三</td>
+                <td>2018-03-08</td>
+                <td>
+                    <a href="category_toAdd.html">编辑</a>
+                    <a href="">删除</a>      
+                </td>
+            </tr>
+            <tr class="sh">
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-03-08</td>
+                <td>53.8</td>
+                <td>支出</td>
+                <td>7333.39</td>
+                <td>张三</td>
+                <td>2018-03-08</td>
+                <td>
+                    <a href="category_toAdd.html">编辑</a>
+                    <a href="">删除</a>      
+                </td>
+            </tr>
+            <tr  class="dh">
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-01-25</td>
+                <td>800</td>
+                <td>支出</td>
+                <td>7417.29</td>
+                <td>张三</td>
+                <td>2018-01-25</td>
+                <td>
+                    <a href="category_toAdd.html">编辑</a>
+                    <a href="">删除</a>      
+                </td>
+            </tr>
+            <tr class="sh">
+                <td>团队</td>
+                <td>测试</td>
+                <td>2018-01-08</td>
+                <td>36.13</td>
+                <td>支出</td>
+                <td>8217.39</td>
+                <td>张三</td>
+                <td>2018-01-08</td>
+                <td>
+                    <a href="category_toAdd.html">编辑</a>
+                    <a href="">删除</a>      
+                </td>
+            </tr>
+            <tr  class="dh">
+                <td>团队</td>
+                <td>测试</td>
+                <td>2017-12-25</td>
+                <td>35</td>
+                <td>支出</td>
+                <td>8253.42</td>
+                <td>张三</td>
+                <td>2017-12-25</td>
+                <td>
+                    <a href="category_toAdd.html">编辑</a>
+                    <a href="">删除</a>      
+                </td>
+            </tr>
+          
+        </table>
+     
+        <div  id="contextbotton">
+            <div id="xsjl">
+                共 83 条记录，当前显示第76-83条 
+                <select>
+                    <option>15条/页</option>
+                </select>
+            </div>
+            
+            <div  id="fycx">
+                <input type="button" value="<">
+                <input type="button" value="1">
+                <input type="button" value="2">
+                <input type="button" value="3">
+                <input type="button" value="4">
+                <input type="button" value="5">
+                <input type="button" value="6">
+                <input  type="text" placeholder="6/6页" style="text-align: center; width: 40px;">
+                <input type="button" value=">" style="background-color: #e9f3fe;">
+            </div>
+           
+        </div>
+       <hr style="margin-left: 50px; margin-right: 50px;">
+        
+        
+        
+    </div>
+    
+    <div id="div3" ></div>
+   
+</body>
+</html>

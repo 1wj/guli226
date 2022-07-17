@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+           姓： <input type="text" v-model="first"/><br>
+           名： <input type="text" v-model="second"/><br>
+            总和：{{f1()}}
+            <!-- 加扩号表示调用函数的返回值，不加括号表示调用函数的本体 -->
+    </div>
+    <script src="vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                first:'张',
+                second:'三'
+            },
+            methods: {
+                f1(){
+                    return this.first+'-'+this.second
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

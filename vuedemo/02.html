@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+            <input type="text" @keydown.enter="showInfo"/>
+            <input type="text" @keyup.ctrl.y="showInfo2"/>
+            <!-- 只用按到Ctrl+y才会调用事件 
+                
+                默认会传$event
+               
+               
+                事件修饰符：prevent（阻止默认事件） stop（阻止冒泡） once  可以@Click.prevent.stop连用
+            -->
+    </div>
+    <script src="vue.min.js"></script>
+    <script>
+        Vue.config.keyCodes.huiche=13//定义了一个别名按键
+        new Vue({
+            el: '#app',
+            data: {
+                
+            },
+            methods: {
+                showInfo2(e){
+                    console.log(e.target.value)
+                }
+            },  
+        })
+    </script>
+</body>
+
+</html>
